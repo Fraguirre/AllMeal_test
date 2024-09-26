@@ -4,7 +4,7 @@ from .models import Menu, Empleado, Pedido
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
         model = Menu
-        fields = ['id', 'fecha', 'entrada', 'plato_principal', 'postre']  # Asegúrate de que los campos coincidan con tu modelo.
+        fields = ['id', 'fecha', 'entrada', 'plato_principal', 'postre']
 
 
 class EmpleadoSerializer(serializers.ModelSerializer):
@@ -14,8 +14,8 @@ class EmpleadoSerializer(serializers.ModelSerializer):
 
 
 class PedidoSerializer(serializers.ModelSerializer):
-    empleado = EmpleadoSerializer()  # Relación anidada
-    menu = MenuSerializer()  # Relación anidada
+    empleado = EmpleadoSerializer()  
+    menu = MenuSerializer()  
 
     class Meta:
         model = Pedido
