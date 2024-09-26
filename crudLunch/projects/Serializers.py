@@ -4,13 +4,19 @@ from .models import Menu, Empleado, Pedido
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
         model = Menu
-        fields = ['id', 'fecha', 'entrada', 'plato_principal', 'postre']
+        fields = ['id',
+                  'fecha',
+                  'entrada', 
+                  'plato_principal',
+                  'postre']
 
 
 class EmpleadoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Empleado
-        fields = ['id', 'slack_id_usuario', 'nombre']
+        fields = ['id', 
+                  'slack_id_usuario',
+                  'nombre']
 
 
 class PedidoSerializer(serializers.ModelSerializer):
@@ -19,4 +25,8 @@ class PedidoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Pedido
-        fields = ['id', 'empleado', 'menu', 'opcion_seleccionada', 'fecha_pedido']
+        fields = ['id',
+                  'empleado',
+                  'menu',
+                  'opcion_seleccionada',
+                  'fecha_pedido']
