@@ -43,10 +43,8 @@ class PedidoViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
-        # Obtener la hora actual
         now = datetime.now().time()
 
-        # Definir la ventana de tiempo permitida para hacer pedidos (ejemplo: entre 11:30am y 12:00pm)
         start_time = time(11, 30)
         end_time = time(12, 0)
 
